@@ -1,0 +1,31 @@
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+	int i,n,smallest,second_smallest;
+	printf("enter the size of an array:");
+	scanf("%d",&n);
+	int arr[n];
+	printf("enter the elements of array:\n");
+	for(i=0;i<n;i++)
+	{
+		scanf("%d \n",&arr[i]);
+	}
+	smallest=arr[0];
+	second_smallest=-1;
+	for(i=1;i<n;i++)
+	{
+		if(arr[i]<smallest)
+		{
+			second_smallest=smallest;
+			smallest=arr[i];
+		}else if (arr[i]>smallest && arr[i]<second_smallest)
+		{
+			second_smallest=arr[i];
+		}
+	}
+	
+   printf("smallest= %d  second smallest=%d",smallest,second_smallest);
+	
+	return 0;
+}
